@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AppBoleteria.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialDatabase_ConcertDB : Migration
+    public partial class InitialDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,7 +15,7 @@ namespace AppBoleteria.Migrations
                 name: "Tickets",
                 columns: table => new
                 {
-                    Guid = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsUse = table.Column<bool>(type: "bit", nullable: false),
@@ -23,7 +23,7 @@ namespace AppBoleteria.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tickets", x => x.Guid);
+                    table.PrimaryKey("PK_Tickets", x => x.Id);
                 });
         }
 

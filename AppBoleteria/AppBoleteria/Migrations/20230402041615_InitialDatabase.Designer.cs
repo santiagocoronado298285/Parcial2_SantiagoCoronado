@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppBoleteria.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20230402025701_modified-dataanotaccions")]
-    partial class modifieddataanotaccions
+    [Migration("20230402041615_InitialDatabase")]
+    partial class InitialDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,11 +27,11 @@ namespace AppBoleteria.Migrations
 
             modelBuilder.Entity("AppBoleteria.DAL.Entity.Ticket", b =>
                 {
-                    b.Property<int>("Guid")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Guid"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("EntranceGate")
                         .IsRequired()
@@ -43,7 +43,7 @@ namespace AppBoleteria.Migrations
                     b.Property<DateTime>("UseDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("Guid");
+                    b.HasKey("Id");
 
                     b.ToTable("Tickets");
                 });

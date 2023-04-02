@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppBoleteria.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20230402033651_modifieddatabase_DataAnnotacions")]
-    partial class modifieddatabase_DataAnnotacions
+    [Migration("20230402044006_modified_dataannotacions")]
+    partial class modified_dataannotacions
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,7 +38,9 @@ namespace AppBoleteria.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsUse")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<DateTime>("UseDate")
                         .HasColumnType("datetime2");

@@ -35,7 +35,9 @@ namespace AppBoleteria.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsUse")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<DateTime>("UseDate")
                         .HasColumnType("datetime2");

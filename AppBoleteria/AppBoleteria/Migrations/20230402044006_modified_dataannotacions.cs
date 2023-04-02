@@ -5,7 +5,7 @@
 namespace AppBoleteria.Migrations
 {
     /// <inheritdoc />
-    public partial class modifieddatabase_DataAnnotacions : Migration
+    public partial class modified_dataannotacions : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

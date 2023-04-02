@@ -10,11 +10,11 @@ using AppBoleteria.DAL.Entity;
 
 namespace AppBoleteria.Controllers
 {
-    public class TicketsController : Controller
+    public class TicketController : Controller
     {
         private readonly DataBaseContext _context;
 
-        public TicketsController(DataBaseContext context)
+        public TicketController(DataBaseContext context)
         {
             _context = context;
         }

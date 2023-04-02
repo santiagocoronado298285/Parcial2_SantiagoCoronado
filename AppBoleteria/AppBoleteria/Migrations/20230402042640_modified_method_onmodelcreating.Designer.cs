@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppBoleteria.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20230402013137_InitialDatabase_ConcertDB")]
-    partial class InitialDatabase_ConcertDB
+    [Migration("20230402042640_modified_method_onmodelcreating")]
+    partial class modified_method_onmodelcreating
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,23 +27,25 @@ namespace AppBoleteria.Migrations
 
             modelBuilder.Entity("AppBoleteria.DAL.Entity.Ticket", b =>
                 {
-                    b.Property<int>("Guid")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Guid"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("EntranceGate")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsUse")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<DateTime>("UseDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("Guid");
+                    b.HasKey("Id");
 
                     b.ToTable("Tickets");
                 });
