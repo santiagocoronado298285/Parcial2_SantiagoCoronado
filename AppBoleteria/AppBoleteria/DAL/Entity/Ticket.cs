@@ -7,13 +7,13 @@ namespace AppBoleteria.DAL.Entity
     public class Ticket
     {
         [Key]
-        [Required]
+        
         
         public int Id { get; set; }
 
-  
+        
         [Display(Name = "Fecha de uso Boleta")]
-        public DateTime UseDate { get; set; }
+        public DateTime? UseDate { get; set; }
 
         [Display(Name = "Boleta usada?")]
        
@@ -21,7 +21,7 @@ namespace AppBoleteria.DAL.Entity
 
         [Display(Name = "Entrada al estadio")]
        
-        public string EntranceGate { get; set; }
+        public string? EntranceGate { get; set; }
 
     }
 }

@@ -22,7 +22,7 @@ namespace AppBoleteria.DAL
             modelBuilder.Entity<Ticket>().Property(p => p.IsUse).HasDefaultValue(false);
             modelBuilder.Entity<Ticket>().Property(p => p.UseDate).HasDefaultValue(null);
             modelBuilder.Entity<Ticket>().Property(p => p.EntranceGate).HasDefaultValue(null);
-
+           
         }
     }
 }

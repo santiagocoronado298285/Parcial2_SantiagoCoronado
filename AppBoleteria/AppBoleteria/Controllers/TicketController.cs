@@ -19,7 +19,7 @@ namespace AppBoleteria.Controllers
             _context = context;
         }
 
-        // GET: Tickets
+        // GET: Ticket
         public async Task<IActionResult> Index()
         {
               return _context.Tickets != null ? 
@@ -27,7 +27,7 @@ namespace AppBoleteria.Controllers
                           Problem("Entity set 'DataBaseContext.Tickets'  is null.");
         }
 
-        // GET: Tickets/Details/5
+        // GET: Ticket/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Tickets == null)
@@ -45,13 +45,19 @@ namespace AppBoleteria.Controllers
             return View(ticket);
         }
 
-        // GET: Tickets/Create
+        // GET: Ticket/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Tickets/Create
+        // GET: Ticket/VerifiedTicket
+        public IActionResult VerifiedTicket()
+        {
+            return View();
+        }
+
+        // POST: Ticket/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -67,7 +73,7 @@ namespace AppBoleteria.Controllers
             return View(ticket);
         }
 
-        // GET: Tickets/Edit/5
+        // GET: Ticket/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Tickets == null)
@@ -83,7 +89,7 @@ namespace AppBoleteria.Controllers
             return View(ticket);
         }
 
-        // POST: Tickets/Edit/5
+        // POST: Ticket/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -118,7 +124,7 @@ namespace AppBoleteria.Controllers
             return View(ticket);
         }
 
-        // GET: Tickets/Delete/5
+        // GET: Ticket/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Tickets == null)
@@ -136,7 +142,7 @@ namespace AppBoleteria.Controllers
             return View(ticket);
         }
 
-        // POST: Tickets/Delete/5
+        // POST: Ticket/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
