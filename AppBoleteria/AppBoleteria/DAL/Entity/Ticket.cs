@@ -2,19 +2,20 @@
 
 namespace AppBoleteria.DAL.Entity
 {
-    public class Tickets
+    public class Ticket
     {
         [Key]
         [Required]
-        public int Guid { get; set; }
+        
+        public int Id { get; set; }
 
 
         [Display(Name = "Fecha de uso Boleta")]
         public DateTime UseDate { get; set; }
 
-        [Required]
+        
         public bool IsUse { get; set; }
-        [Required]
+        
         public string EntranceGate { get; set; }
 
     }
