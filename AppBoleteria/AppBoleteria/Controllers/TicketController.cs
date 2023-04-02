@@ -51,7 +51,7 @@ namespace AppBoleteria.Controllers
             return View();
         }
 
-        // GET: Ticket/VerifiedTicket
+        // GET: Ticket/Create
         public IActionResult VerifiedTicket()
         {
             return View();
@@ -62,7 +62,7 @@ namespace AppBoleteria.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,UseDate,IsUse,EntranceGate")] Ticket ticket)
+        public async Task<IActionResult> Create(Ticket ticket)
         {
             if (ModelState.IsValid)
             {
